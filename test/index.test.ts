@@ -15,6 +15,15 @@ describe('ErrorMessage', () => {
     expect(message).toBe('There was an error');
   });
 
+  it('should return a custom message for a custom code', () => {
+    const errorMessages = new ErrorMessages({
+      '400_POST': 'No post on sundays',
+    });
+    const message = errorMessages.getErrorMessage('400_POST');
+
+    expect(message).toBe('No post on sundays');
+  });
+
   it('should return the record of messages', () => {
     const errorMessages = new ErrorMessages();
     const message = errorMessages.messages['400'];

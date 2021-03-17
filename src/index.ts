@@ -1,6 +1,5 @@
 import  { ErrorMessages } from './ErrorMessages';
 import { errorCodes } from './errorCodes'
-import { isErrorCode } from './isErrorCode';
 import type { ErrorCode } from './errorCodes';
 const {
   // 000s
@@ -28,8 +27,7 @@ const {
 } = errorCodes
 
 export {
-  ErrorMessages,
-  isErrorCode,
+  ErrorMessages
 };
 
 export { 
