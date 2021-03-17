@@ -11,7 +11,7 @@ export class ErrorMessages {
     };
   }
 
-  isErrorCode(code: string | number): code is ErrorCode {
+  isErrorCode = (code: string | number): code is ErrorCode => {
     const errorCodes = Object.keys(this.messages);
     const parsedCode = String(code);
     const allowedKeys: string[] = Object.values(errorCodes);
@@ -19,7 +19,7 @@ export class ErrorMessages {
     return allowedKeys.indexOf(parsedCode) !== -1;
   }
 
-  getErrorMessage(code: number | string, fallbackMessage?: string) {
+  getErrorMessage = (code: number | string, fallbackMessage?: string) => {
     const parsedCode = String(code);
 
     if (!this.isErrorCode(parsedCode)) {
